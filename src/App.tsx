@@ -1,25 +1,21 @@
 import React from 'react';
-import logo from './logo.svg';
+import { Provider as ReduxProvider } from 'react-redux';
+
+import RepositoriesSearch from './components/RepositoriesSearch';
+import RepositoriesList from './components/RepositoriesList';
+
+import { store } from './state';
 import './App.css';
 
-function App() {
+function App() {  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ReduxProvider store={store}>
+      <div className="App">
+        <h1>NPM package directory</h1>
+        <RepositoriesSearch />
+        <RepositoriesList />
+      </div>
+    </ReduxProvider>
   );
 }
 

@@ -1,0 +1,1 @@
+export const NPM_URL = 'http://registry.npmjs.org/-/v1/search';
